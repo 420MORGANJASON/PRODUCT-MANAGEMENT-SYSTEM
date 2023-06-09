@@ -181,7 +181,7 @@ def main(role):
             print("3. Never sold products")
             print("4. Products purchased in a date range")
 
-            report_choice = input("Enter your choice: ")
+            report_choice = input("Enter choice: ")
 
             if report_choice == "1":
             # Most sold products report
@@ -235,7 +235,7 @@ def main(role):
 
     elif role == "user":
         # Code for user role
-        username = input("Enter your username: ")
+        username = input("Enter username: ")
         customer = session.query(Customer).filter_by(username=username).first()
 
         if customer is None:
@@ -247,11 +247,11 @@ def main(role):
         print("2. Purchase a product")
         print("3. Exit")
 
-        user_choice = input("Enter your choice: ")
+        user_choice = input("Enter choice: ")
 
         if user_choice == "1":
             # View purchased products
-            print("Purchased products:")
+            print("Products purchased:")
             for product in customer.products:
                 print(
                     f"ID: {product.id}, Name: {product.name}, Brand: {product.brand}, Price: {product.price}, Quantity: {product.quantity}"
@@ -307,7 +307,7 @@ if __name__ == "__main__":
     session = Session()
 
     main()
-    print("Exiting the menu.")
+    print("Exiting menu.")
 
 
 # from sqlalchemy import create_engine
